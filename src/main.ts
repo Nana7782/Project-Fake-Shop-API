@@ -94,10 +94,11 @@ function sortAndDisplayProducts(productsArray: IProdukts[], sortValue: string) {
   let sortedProducts: IProdukts[];
   if (sortValue === "price") {
     sortedProducts = [...productsArray].sort((a, b) => a.price - b.price);
-  } else if (sortValue === "rating") {
+  } else {
     sortedProducts = [...productsArray].sort(
       (a, b) => a.rating.rate - b.rating.rate
     );
-    displayProducts(sortedProducts);
   }
+  console.log(sortedProducts);
+  displayProducts(sortedProducts);
 }

@@ -1,3 +1,21 @@
+html {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: #00ecaa;
+}
+h1 {
+  color: #5d3ede;
+  font-size: 90px;
+  text-shadow: 5px 5px 5px black;
+}
+nav button {
+  background-color: #5d3ede;
+  color: #00ecaa;
+  padding: 10px 20px 10px 20px;
+  border-radius: 30px;
+  font-size: 20px;
+  border: none;
+  box-shadow: 5px 5px 5px black;
+}
 img {
   height: 100px;
 }
