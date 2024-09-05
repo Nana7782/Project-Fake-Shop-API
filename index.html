@@ -5,9 +5,28 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="./src/main.ts" defer></script>
-    <title>VThe Fake Shop API</title>
+    <title>The Fake Shop API</title>
   </head>
   <body>
-    <div id="app"></div>
+    <h1>SuperFakeCode</h1>
+    <nav>
+      <input type="text" id="search-input" placeholder="Search by title..." />
+      <select name="" id="">
+        <option value="">Sort by</option>
+        <option value="price">Sort by price</option>
+        <option value="alphabetical">Sort by name</option>
+      </select>
+      <div>
+        <p>Filter by categories:</p>
+        <button id="electro">electronic</button>
+        <button id="jewelery">jewelery</button>
+        <button id="mens">men's clothing</button>
+        <button id="womens">women's clothing</button>
+      </div>
+    </nav>
+    <main>
+      <div id="output-container"></div>
+    </main>
+    <footer>...</footer>
   </body>
 </html>
