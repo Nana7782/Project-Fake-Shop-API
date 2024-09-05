@@ -10,3 +10,5 @@ const womensBtn = document.getElementById("womens") as HTMLButtonElement;
 const output = document.getElementById("output-container") as HTMLDivElement;
 
 const BASE_URL = "https://fakestoreapi.com/products";
+
+let productsArray: IProdukts[] = [];
