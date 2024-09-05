@@ -65,6 +65,13 @@ input.addEventListener("input", () => {
   );
   displayProducts(filteredProducts);
 });
+
+sortBy.addEventListener("change", () => {
+  const sortValue = sortBy.value;
+  console.log(sortValue);
+  // sortAndDisplayProducts(productsArray, sortValue)
+});
+
 electroBtn.addEventListener("click", () => filterByCategory("electronics"));
 jeweleryBtn.addEventListener("click", () => filterByCategory("jewelery"));
 mensBtn.addEventListener("click", () => filterByCategory("men's clothing"));
@@ -75,4 +82,9 @@ function filterByCategory(category: string) {
     (product) => product.category === category
   );
   displayProducts(filteredProducts);
+}
+
+function sortAndDisplayProducts(productsArray: IProdukts[], sortValue: string) {
+  if (sortValue === "price") {
+  }
 }
