@@ -98,5 +98,6 @@ function sortAndDisplayProducts(productsArray: IProdukts[], sortValue: string) {
     sortedProducts = [...productsArray].sort(
       (a, b) => a.rating.rate - b.rating.rate
     );
+    displayProducts(sortedProducts);
   }
 }
