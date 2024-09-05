@@ -45,19 +45,19 @@ function displayProducts(products: IProdukts[]) {
 
       const productImage = document.createElement("img") as HTMLImageElement;
       productImage.src = product.image;
-      output.appendChild(productImage);
+      productCard.appendChild(productImage);
 
       const productTitle = document.createElement("h3") as HTMLHeadElement;
       productTitle.textContent = product.title;
-      output.appendChild(productTitle);
+      productCard.appendChild(productTitle);
 
       const productPrice = document.createElement("p") as HTMLParagraphElement;
       productPrice.textContent = `${product.price.toString()} €`;
-      output.appendChild(productPrice);
+      productCard.appendChild(productPrice);
 
       const productBtn = document.createElement("button") as HTMLButtonElement;
       productBtn.textContent = "Add to cart";
-      output.appendChild(productBtn);
+      productCard.appendChild(productBtn);
 
       output.appendChild(productCard);
     });
