@@ -62,6 +62,8 @@ function displayProducts(products: IProdukts[]) {
   }
 }
 
+function fetchCategories();
+
 electroBtn.addEventListener("click", () => {
   displayProducts(productsArray);
 });
