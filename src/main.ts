@@ -2,6 +2,7 @@ import "./style.css";
 import { IProdukts, IRating } from "./interfaces/IProducts";
 import { isPast } from "date-fns";
 
+const input = document.getElementById("search-input") as HTMLInputElement;
 const sortBy = document.getElementById("sort") as HTMLSelectElement;
 const electroBtn = document.getElementById("electro") as HTMLButtonElement;
 const jeweleryBtn = document.getElementById("jewelery") as HTMLButtonElement;
@@ -21,7 +22,8 @@ fetch(BASE_URL)
     return resp.json();
   })
   .then((data: IProdukts[]) => {
-    displayProducts(data);
+    productsArray = data;
+    displayProducts(productsArray);
   })
   .catch((err: Error) => {
     console.log("Error fetching data");
@@ -50,20 +52,27 @@ function displayProducts(products: IProdukts[]) {
       const productBtn = document.createElement("button") as HTMLButtonElement;
       productBtn.textContent = "Add to cart";
       output.appendChild(productBtn);
-    });
-    const input = document.getElementById("search-input") as HTMLInputElement;
 
-    // input.addEventListener("input", () => {
-    //   const searchTerm = input.value.toLowerCase();
-    //   const filteredProducts = products.filter((product) =>
-    //     product.title.toLowerCase().includes(searchTerm)
-    //   );
-    // });
+      output.appendChild(productCard);
+    });
   }
 }
 
-function fetchCategories();
-
-electroBtn.addEventListener("click", () => {
-  displayProducts(productsArray);
+input.addEventListener("input", () => {
+  const searchTerm = input.value.toLowerCase();
+  const filteredProducts = productsArray.filter((product) =>
+    product.title.toLowerCase().includes(searchTerm)
+  );
+  displayProducts(filteredProducts);
 });
+electroBtn.addEventListener("click", () => filterByCategory("electronics"));
+jeweleryBtn.addEventListener("click", () => filterByCategory("jewelery"));
+mensBtn.addEventListener("click", () => filterByCategory("men's clothing"));
+womensBtn.addEventListener("click", () => filterByCategory("women's clothing"));
+
+function filterByCategory(category: string) {
+  const filteredProducts = productsArray.filter(
+    (product) => product.category === category
+  );
+  displayProducts(filteredProducts);
+}
