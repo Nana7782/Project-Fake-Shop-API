@@ -1,6 +1,5 @@
 import "./style.css";
 import { IProdukts, IRating } from "./interfaces/IProducts";
-import { isPast } from "date-fns";
 
 const input = document.getElementById("search-input") as HTMLInputElement;
 const sortBy = document.getElementById("sort") as HTMLSelectElement;
