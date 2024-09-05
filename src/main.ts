@@ -52,7 +52,7 @@ function displayProducts(products: IProdukts[]) {
       output.appendChild(productTitle);
 
       const productPrice = document.createElement("p") as HTMLParagraphElement;
-      productPrice.textContent = product.price.toString();
+      productPrice.textContent = `${product.price.toString()} €`;
       output.appendChild(productPrice);
 
       const productBtn = document.createElement("button") as HTMLButtonElement;
