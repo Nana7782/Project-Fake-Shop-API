@@ -2,6 +2,9 @@ html {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   background-color: #00ecaa;
 }
+main{
+  min-height: 40vh;
+}
 h1 {
   color: #5d3ede;
   font-size: 90px;
@@ -44,19 +47,47 @@ nav button {
   border: none;
   box-shadow: 5px 5px 5px black;
 }
+#output-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 
+}
 .product-card {
   background-color: aliceblue;
   border-radius: 20px;
   padding: 20px;
+  margin: 10px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 .product-card p {
   color: #5d3ede;
 }
+.product-card button {
+  background-color: #5d3ede;
+  color: #00ecaa;
+  padding: 10px 20px 10px 20px;
+  border-radius: 30px;
+  font-size: 20px;
+  border: none;
+  box-shadow: 5px 5px 5px black;
+}
 img {
+  max-height: 200px;
+  object-fit: contain;
+
+}
+footer{
+  background-color: #5d3ede;
   height: 100px;
 }
-
+footer p{
+  padding-top: 40px;
+  text-align: center;
+  color: #00ecaa;
+}
 /* LOADER */
 
 .loader {
