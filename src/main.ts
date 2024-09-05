@@ -11,6 +11,10 @@ const output = document.getElementById("output-container") as HTMLDivElement;
 
 const BASE_URL = "http://fakestoreapi.com/products";
 
+const loadingIndicator = document.querySelector(".loader") as HTMLSpanElement;
+
+loadingIndicator.style.display = "block";
+
 let productsArray: IProdukts[] = [];
 
 fetch(BASE_URL)
@@ -27,6 +31,9 @@ fetch(BASE_URL)
   .catch((err: Error) => {
     console.log("Error fetching data");
     output.innerHTML = `<p>Error fetching data: ${err.message}</p>`;
+  })
+  .finally(() => {
+    loadingIndicator.style.display = "none";
   });
 
 function displayProducts(products: IProdukts[]) {
@@ -84,9 +91,12 @@ function filterByCategory(category: string) {
 }
 
 function sortAndDisplayProducts(productsArray: IProdukts[], sortValue: string) {
-  let sortByPrice;
+  let sortedProducts: IProdukts[];
   if (sortValue === "price") {
-    sortByPrice = productsArray.sort((a, b) => a.price - b.price);
+    sortedProducts = [...productsArray].sort((a, b) => a.price - b.price);
+  } else if (sortValue === "rating") {
+    sortedProducts = [...productsArray].sort(
+      (a, b) => a.rating.rate - b.rating.rate
+    );
   }
-  console.log(sortByPrice);
 }
