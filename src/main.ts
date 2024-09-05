@@ -9,7 +9,7 @@ const mensBtn = document.getElementById("mens") as HTMLButtonElement;
 const womensBtn = document.getElementById("womens") as HTMLButtonElement;
 const output = document.getElementById("output-container") as HTMLDivElement;
 
-const BASE_URL = "https://fakestoreapi.com/products";
+const BASE_URL = "http://fakestoreapi.com/products";
 
 let productsArray: IProdukts[] = [];
 
@@ -68,7 +68,7 @@ input.addEventListener("input", () => {
 sortBy.addEventListener("change", () => {
   const sortValue = sortBy.value;
   console.log(sortValue);
-  // sortAndDisplayProducts(productsArray, sortValue)
+  sortAndDisplayProducts(productsArray, sortValue);
 });
 
 electroBtn.addEventListener("click", () => filterByCategory("electronics"));
@@ -84,6 +84,9 @@ function filterByCategory(category: string) {
 }
 
 function sortAndDisplayProducts(productsArray: IProdukts[], sortValue: string) {
+  let sortByPrice;
   if (sortValue === "price") {
+    sortByPrice = productsArray.sort((a, b) => a.price - b.price);
   }
+  console.log(sortByPrice);
 }
